@@ -56,14 +56,16 @@ Stanford Dogs:
 <summary>Finetune</summary>
 
 ```python
-
-	
+(1) Put the parameters of Resnet18 into the path .models/petrained. This parameters can be download at: .
+(2) Finetune the network with the cross-entropy loss for classification. Such as: python finetune_cub.py 
+You can also use our pretrained models. The pretrained models can be download at: .
 ```
 </details>
 
 <details>
 <summary>Train</summary>
-
+(1) Put the finetuned network into the path .checkpoint.
+(2) Train the network. Such as: python cub_train.py
 ```python
 
 	
