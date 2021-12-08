@@ -75,7 +75,6 @@ def main(config, bit,margin):
     print(f'seed:{seed}')
     model = MainNet(num_classes=config["n_class"], channels=config["channels"], bit=bit)
 
-    #state_dict = torch.load('./save/dog_classifier_resnet18.t', map_location=device)['model_state_dict']
     state_dict = torch.load('checkpoint/dog_ft.t', map_location=device)['model_state_dict']
     model.load_state_dict(state_dict, strict=False)
     criterion = nn.CrossEntropyLoss()
