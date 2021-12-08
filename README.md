@@ -20,10 +20,10 @@ CUB-200-2011: link：https://pan.baidu.com/s/1cWVu7JHSQV9Pvw-dLlkDQw, extraction
 FGVC-Aircraft: link：https://pan.baidu.com/s/1MEiwAJbBGmsCbpZ5u19x8Q, extraction code：91su
 |--FGVC-aircraft
   |--data
-	  |--images
-		  |--...
-		|--test.txt
-		|--train.txt
+    |--images
+       |--...
+    |--test.txt
+    |--train.txt
 
 
 Stanford Cars: link：https://pan.baidu.com/s/1c6mivvIXXEjERP2ilDtHNg, extraction code：o96t
