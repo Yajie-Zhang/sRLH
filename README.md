@@ -56,10 +56,11 @@ Stanford Dogs:
 <summary>Finetune</summary>
 
 ```python
-(1) Put the parameters of Resnet18 into the path .models/petrained. This parameters can be download at: .
+(1) Put the parameters of Resnet18 into the path .models/petrained. This parameters can be download at link：https://pan.baidu.com/s/1uGfo2JCiX4GmqkGE2waG7A. 
+Extraction code：7bu5.
 (2) Finetune the network with the cross-entropy loss for classification. Such as: python finetune_cub.py. 
-(3) Choose the network with minimized loss to initialize the sRLH models.
-You can also use our pretrained models. The pretrained models can be download at: .
+(3) Choose the network with minimum loss to initialize the sRLH models.
+You can also use our pretrained models. The pretrained models can be download at link：https://pan.baidu.com/s/15FlAAZD9NZtW9MVKdwy7RA. Extraction code：fith.
 ```
 </details>
 
@@ -73,11 +74,3 @@ You can also use our pretrained models. The pretrained models can be download at
 </details>
 
 
-<details>
-<summary>Citation</summary>
-
-```python
-
-	
-```
-</details>
