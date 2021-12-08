@@ -5,7 +5,7 @@ Sub-region localized hashing for fine-grained image retrieval
 <summary>Dataset Preparation</summary>
 
 ```python
-CUB-200-2011:
+CUB-200-2011: link：https://pan.baidu.com/s/1cWVu7JHSQV9Pvw-dLlkDQw, extraction code：zzlz
 |--CUB_200_2011
   |--images
     |--001....
@@ -17,7 +17,7 @@ CUB-200-2011:
   |--train_test_split.txt
 
 
-FGVC-Aircraft:
+FGVC-Aircraft: link：https://pan.baidu.com/s/1MEiwAJbBGmsCbpZ5u19x8Q, extraction code：91su
 |--FGVC-aircraft
   |--data
 	  |--images
@@ -26,7 +26,7 @@ FGVC-Aircraft:
 		|--train.txt
 
 
-Stanford Cars:
+Stanford Cars: link：https://pan.baidu.com/s/1c6mivvIXXEjERP2ilDtHNg, extraction code：o96t
 |--Stanford_Cars
   |--cars_test
     |--...
@@ -35,7 +35,7 @@ Stanford Cars:
   |--test.txt
   |--train.txt
 
-Stanford Dogs:
+Stanford Dogs: link：https://pan.baidu.com/s/1mBDOOVwgT0RAzjIITlwbgg, extraction code：ivsu
 |--dogs
   |--images
     |--Images
