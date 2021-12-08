@@ -72,4 +72,19 @@ You can also use our pretrained models. The pretrained models can be download at
 ```
 </details>
 
+<details>
+<summary>Citation</summary>
+
+```python
+@ARTICLE{9638382,
+  author={Xiang, Xinguang and Zhang, Yajie and Jin, Lu and Li, Zechao and Tang, Jinhui},
+  journal={IEEE Transactions on Image Processing}, 
+  title={Sub-Region Localized Hashing for Fine-Grained Image Retrieval}, 
+  year={2021},
+  volume={},
+  number={},
+  pages={1-1},
+  doi={10.1109/TIP.2021.3131042}}
+```
+</details>
 
