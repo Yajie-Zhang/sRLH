@@ -70,10 +70,10 @@ Stanford Dogs: link：https://pan.baidu.com/s/1mBDOOVwgT0RAzjIITlwbgg, extractio
 
 Finetune
 ---
-(1) Put the parameters of Resnet18 into the path .models/petrained. This parameters can be download at link：https://pan.baidu.com/s/1uGfo2JCiX4GmqkGE2waG7A.  Extraction code：7bu5. <br>
+(1) Put the parameters of Resnet18 into the path .models/petrained. This parameters can be download at link：https://pan.baidu.com/s/1uGfo2JCiX4GmqkGE2waG7A, Extraction code：7bu5. <br>
 (2) Finetune the network with the cross-entropy loss for classification. Such as: python finetune_cub.py.  <br>
 (3) Choose the network with minimum loss as the finetuned network. <br>
-You can also use our pretrained models. The pretrained models can be download at link：https://pan.baidu.com/s/15FlAAZD9NZtW9MVKdwy7RA. Extraction code：fith. <br>
+You can also use our pretrained models. The pretrained models can be download at link：https://pan.baidu.com/s/15FlAAZD9NZtW9MVKdwy7RA, Extraction code：fith. <br>
 
 Train
 ---
