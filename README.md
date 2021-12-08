@@ -13,3 +13,12 @@ CUB-200-2011:
   |--image_class_labels.txt
   |--image.txt
   |--train_test_split.txt
+
+
+FGVC-Aircraft:
+|--FGVC-aircraft
+  |--data
+	  |--images
+		  |--...
+		|--test.txt
+		|--train.txt
