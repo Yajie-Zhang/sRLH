@@ -1,8 +1,10 @@
 # sLRH
 Sub-region localized hashing for fine-grained image retrieval
 
+<details>
+<summary>Dataset Preparation</summary>
 
-Dataset Preparation:
+```python
 CUB-200-2011:
 |--CUB_200_2011
   |--images
@@ -24,4 +26,27 @@ FGVC-Aircraft:
 		|--train.txt
 
 
-a
+Stanford Cars:
+|--Stanford_Cars
+  |--cars_test
+    |--...
+  |--cars_train
+    |--...
+  |--test.txt
+  |--train.txt
+
+Stanford Dogs:
+|--dogs
+  |--images
+    |--Images
+      |--file
+      |--file
+      ...
+  |--lists
+    |--file
+    |--file
+    ...
+  |--test_data.mat
+  |--train_data.mat
+```
+</details>
