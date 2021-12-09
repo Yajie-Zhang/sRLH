@@ -2,7 +2,7 @@
 
 Dataset Preparation
 ---
-CUB-200-2011: link：https://pan.baidu.com/s/1cWVu7JHSQV9Pvw-dLlkDQw, extraction code：zzlz <br>
+CUB-200-2011: link：https://pan.baidu.com/s/1cWVu7JHSQV9Pvw-dLlkDQw, extraction code：zzlz. <br>
 <details>
 <summary>Details</summary>
 
@@ -11,7 +11,7 @@ CUB-200-2011: link：https://pan.baidu.com/s/1cWVu7JHSQV9Pvw-dLlkDQw, extraction
   |--images 
        |--001...
        |--002... 
-       ... <br>
+       ... 
   |--classes.txt 
   |--image_class_labels.txt 
   |--image.txt 
@@ -19,7 +19,7 @@ CUB-200-2011: link：https://pan.baidu.com/s/1cWVu7JHSQV9Pvw-dLlkDQw, extraction
 ```
 </details>
 
-FGVC-Aircraft: link：https://pan.baidu.com/s/1MEiwAJbBGmsCbpZ5u19x8Q, extraction code：91su <br>
+FGVC-Aircraft: link：https://pan.baidu.com/s/1MEiwAJbBGmsCbpZ5u19x8Q, extraction code：91su. <br>
 <details>
 <summary>Details</summary>
 
@@ -33,7 +33,7 @@ FGVC-Aircraft: link：https://pan.baidu.com/s/1MEiwAJbBGmsCbpZ5u19x8Q, extractio
 ```
 </details>
 
-Stanford Cars: link：https://pan.baidu.com/s/1c6mivvIXXEjERP2ilDtHNg, extraction code：o96t <br>
+Stanford Cars: link：https://pan.baidu.com/s/1c6mivvIXXEjERP2ilDtHNg, extraction code：o96t. <br>
 <details>
 <summary>Details</summary>
 
@@ -48,7 +48,7 @@ Stanford Cars: link：https://pan.baidu.com/s/1c6mivvIXXEjERP2ilDtHNg, extractio
 ```
 </details>
 
-Stanford Dogs: link：https://pan.baidu.com/s/1mBDOOVwgT0RAzjIITlwbgg, extraction code：ivsu <br>
+Stanford Dogs: link：https://pan.baidu.com/s/1mBDOOVwgT0RAzjIITlwbgg, extraction code：ivsu. <br>
 <details>
 <summary>Details</summary>
 
@@ -70,15 +70,15 @@ Stanford Dogs: link：https://pan.baidu.com/s/1mBDOOVwgT0RAzjIITlwbgg, extractio
 
 Finetune
 ---
-(1) Put the parameters of Resnet18 into the path .models/petrained. This parameters can be download at link：https://pan.baidu.com/s/1uGfo2JCiX4GmqkGE2waG7A, Extraction code：7bu5. <br>
-(2) Finetune the network with the cross-entropy loss for classification. Such as: python finetune_cub.py.  <br>
+(1) Put the parameters of Resnet18 into the path .models/petrained. This parameters can be download at link：https://pan.baidu.com/s/1uGfo2JCiX4GmqkGE2waG7A, extraction code：7bu5. <br>
+(2) Finetune the network with the cross-entropy loss for classification, such as: python finetune_cub.py.  <br>
 (3) Choose the network with minimum loss as the finetuned network. <br>
-You can also use our pretrained models. The pretrained models can be download at link：https://pan.baidu.com/s/15FlAAZD9NZtW9MVKdwy7RA, Extraction code：fith. <br>
+You can also use our pretrained models. The pretrained models can be download at link：https://pan.baidu.com/s/15FlAAZD9NZtW9MVKdwy7RA, extraction code：fith. <br>
 
 Train
 ---
 (1) Put the finetuned network into the path .checkpoint. <br>
-(2) Train the network. Such as: python cub_train.py	 <br>
+(2) Train the network, such as: python cub_train.py	 <br>
 
 Citation
 ---
