@@ -84,10 +84,10 @@ Citation
 ---
     @ARTICLE{9638382,
     author={Xiang, Xinguang and Zhang, Yajie and Jin, Lu and Li, Zechao and Tang, Jinhui},
-    journal={IEEE Transactions on Image Processing},
-    title={Sub-Region Localized Hashing for Fine-Grained Image Retrieval}, 
-    year={2021},
-    volume={},
+    journal={IEEE Transactions on Image Processing}, 
+    title={Sub-Region Localized Hashing for Fine-Grained Image Retrieval},
+    year={2022},
+    volume={31},
     number={},
-    pages={1-1},
+    pages={314-326},
     doi={10.1109/TIP.2021.3131042}}
