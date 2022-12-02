@@ -13,19 +13,22 @@ import torch.nn.functional as Fc
 import itertools
 from utils.read_data import Read_Dataset
 import os
-
+import logging
+logging.basicConfig(filename='hash_sRLH_car.log', format='%(asctime)s - %(levelname)s - %(message)s',level=logging.INFO)
+logger = logging.getLogger(__name__)
 def get_config():
     config = {
         "info": "[sRLH-CAR]",
         "resize_size": 224,
-        "batch_size": 128,
+        "batch_size": 64,
         "dataset": "CAR",
         "epoch": 300,
         "test_map": 15,
         # "device":torch.device("cpu"),
-        "device": torch.device("cuda"),
+        "device": torch.device("cuda:5"),
+        "alpha" :0.9,
         "bit_list": [16,32,48,64],
-        "num_workers": 8,
+        "num_workers": 16,
         "channels": 512,
         "init_lr": 0.001,
         "weight_decay": 1e-4,
@@ -37,24 +40,28 @@ def get_config():
 
 def gram_schmidt(A):
     """Gram-schmidt正交化"""
-    Q = np.zeros_like(A)
+    Q = np.zeros_like(A.T)
     cnt = 0
-    for a in A.T:
+    for a in A:
         u = np.copy(a)
-        for i in range(0, cnt):
-            u -= np.dot(np.dot(Q[:, i].T, a), Q[:, i])  # 减去待求向量在以求向量上的投影
+        if cnt==0:
+            pass
+        else:
+            for i in range(cnt-1, cnt):
+                u -= np.dot(np.dot(Q[:, i].T, a), Q[:, i])  # 减去待求向量在以求向量上的投影
         e = u / (np.linalg.norm(u))  # 归一化
         Q[:, cnt] = e
         cnt += 1
-    Q = np.sign(Q)
-    return Q
+    # Q = np.sign(Q.T)
+    return Q.T
+
 
 def main(config, bit,margin):
     device = config["device"]
     train_data = STANFORD_CAR(config["dataroot"], is_train=True)
     train_img_label = train_data.train_img_label
     num_train = len(train_img_label)
-    n_select_train=4000
+    n_select_train=num_train
     train_label = torch.zeros(num_train)
     for i in range(num_train):
         cur_label = train_img_label[i][1]
@@ -71,7 +78,7 @@ def main(config, bit,margin):
         torch.cuda.manual_seed(seed)
         torch.backends.cudnn.deterministic = True
 
-    seed = random.randint(1, 1000)
+    seed = 100
     seed_torch(seed)
     print(f'seed:{seed}')
     model = MainNet(num_classes=config["n_class"], channels=config["channels"], bit=bit)
@@ -90,7 +97,8 @@ def main(config, bit,margin):
     B = torch.zeros(n_select_train, bit).to(device)
     B_label = torch.ones(n_select_train, config["n_class"]).to(device)
 
-    C = torch.sign(torch.rand(config["n_class"], bit) - 0.5).to(device)
+    # C = torch.sign(torch.rand(config["n_class"], bit) - 0.5).to(device)
+    C = get_hash_targets(config["n_class"], bit).to(device)
     center_label = torch.tensor(np.arange(0, config["n_class"], 1)).float()
     center_label_oh = one_hot_label(center_label, config["n_class"]).to(device)
 
@@ -153,11 +161,11 @@ def main(config, bit,margin):
             total_loss.backward()
             optimizer.step()
 
-        print('epoch:{},bit:{},margin:{},loss:{:.4f}'.format(epoch,bit,margin, loss))
+        logger.info('epoch:{},bit:{},margin:{},loss:{:.4f}'.format(epoch,bit,margin, loss))
         if epoch>1:
             C = (B_label.t()) @ B
-            C = C / torch.sum(B_label.t(), dim=1, keepdim=True)
-            C = torch.tensor(gram_schmidt(C.cpu().numpy())).to(device)
+            C=Fc.normalize(C / torch.sum(B_label.t(), dim=1, keepdim=True),dim=1)
+            C = ((config["alpha"])*C+(1-config["alpha"])*torch.tensor(gram_schmidt(C.cpu().numpy())).to(device)).sign()
         if (epoch + 1) % 50 == 0:
             model.snapshot(config["dataset"],epoch, bit)
             model.eval()
@@ -180,12 +188,13 @@ def main(config, bit,margin):
                     train_label_oh[index, :] = label_oh.cpu()
             mAP = mean_average_precision(test_code, test_label_oh, train_code, train_label_oh, num_train)
             current_time = time.strftime('%H:%M:%S', time.localtime(time.time()))
-            print('epoch:{},time:{},mAP:{:.4f}'.format(epoch, current_time, mAP))
+            logger.info('epoch:{},time:{},mAP:{:.4f}'.format(epoch, current_time, mAP))
 
 
 if __name__ == '__main__':
+    # os.environ['CUDA_VISIBLE_DEVICES']='1'
     config = get_config()
-    print(config)
+    logger.info(config)
     for bit in config["bit_list"]:
         for m in config["m"]:
             main(config, bit,m)
