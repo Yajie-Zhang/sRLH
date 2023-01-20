@@ -82,12 +82,12 @@ Train
 
 Citation
 ---
-@article{xiang2021sub,
-  title={Sub-region localized hashing for fine-grained image retrieval},
-  author={Xiang, Xinguang and Zhang, Yajie and Jin, Lu and Li, Zechao and Tang, Jinhui},
-  journal={IEEE Transactions on Image Processing},
-  volume={31},
-  pages={314--326},
-  year={2021},
-  publisher={IEEE}
+@article{xiang2021sub, <br>
+  title={Sub-region localized hashing for fine-grained image retrieval}, <br> 
+  author={Xiang, Xinguang and Zhang, Yajie and Jin, Lu and Li, Zechao and Tang, Jinhui},<br>
+  journal={IEEE Transactions on Image Processing},<br>
+  volume={31},<br>
+  pages={314--326},<br>
+  year={2021},<br>
+  publisher={IEEE}<br>
 }
